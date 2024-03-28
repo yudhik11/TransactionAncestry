@@ -31,6 +31,7 @@ public class AncestryGraphController {
     }
 
     public Integer findAncestrySize(String root, Map<String, Integer> ancestrySize) {
+        if (ancestorGraph.get(root).isEmpty()) return 0;
         if (ancestrySize.containsKey(root)) {
             return ancestrySize.get(root);
         }
